@@ -1,0 +1,59 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/include/template.xhtml">
+
+	<ui:define name="conteudo">
+			
+		<h4> Listagem de Agendamentos - <h:outputText 
+		value="#{funcionarioMBean.funcionarioLogado.nome}" /> 
+		</h4>
+	
+		<h:form>
+			<h:dataTable value="#{agendamentoMBean.agendamentosModel}" 
+			var="agendamento">
+				<h:column>
+    				<f:facet name="header">Data</f:facet>
+    				<h:outputText value="#{agendamento.data}" >
+    					<f:convertDateTime pattern="dd/MM/yyyy"/>
+    				</h:outputText>
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Horário</f:facet>
+    				<h:outputText value="#{agendamento.horario}"/>
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Usuário</f:facet>
+    				<h:outputText value="#{agendamento.usuario.nome}" />
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">CPF</f:facet>
+    				<h:outputText value="#{agendamento.usuario.cpf}" />
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Usuário</f:facet>
+    				<h:outputText value="#{agendamento.motivo}" />
+    			</h:column>
+    			
+    			<h:column>
+    				<f:facet name="header">Setor</f:facet>
+    				<h:outputText value="#{agendamento.setor.nome}" />
+    			</h:column>
+    			
+    			
+    			<h:column>
+					<h:commandButton 
+					action="#{agendamentoMBean.removerAgendamento}"
+					 value="Remover" />
+    			</h:column>
+			</h:dataTable>
+			
+			
+		</h:form>
+	</ui:define>
+</ui:composition>

@@ -1,0 +1,49 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	template="/include/template.xhtml">
+
+	<ui:define name="conteudo">
+			
+		<h4> Novo Agendamento </h4>
+		
+		<h:messages />
+		<h:form>
+			<fieldset>
+				<p> Nome </p> <p> <h:inputText value="#{usuarioMBean.usuario.nome}" required="true"
+					requiredMessage="Nome obrigatório"/>
+				</p>
+				<p> CPF </p> <p> <h:inputText value="#{usuarioMBean.usuario.cpf}" required="true"
+					requiredMessage="CPF obrigatório"/> </p>
+				<p> Telefone </p> <p> <h:inputText value="#{usuarioMBean.usuario.telefone}" /> </p>
+				<p> Data do Atendimento </p> 
+					 <p>
+					 <h:inputText value="#{agendamentoMBean.agendamento.data}" id="data">
+							<f:convertDateTime pattern="dd/MM/yyyy" />
+						</h:inputText>
+					 </p>
+				<p> Horário do Atendimento </p> 
+					 <p>
+					 <h:inputText value="#{agendamentoMBean.agendamento.horario}" id="horario">
+							<f:convertDateTime pattern="HH:MM" />
+						</h:inputText>
+					 </p>
+				<p> Motivo do Atendimento </p> <p> <h:inputText value="#{agendamentoMBean.agendamento.motivo}" required="true"
+					requiredMessage="Motivo obrigatório"/> </p>
+				<p> Setor </p>
+				<p>
+					<h:selectOneListbox id="setor" size="1" value="#{setorMBean.setor.id}"> 
+						<f:selectItems value="#{setorMBean.listasetores}" /> 
+					</h:selectOneListbox>
+				</p>
+				
+				<p> 
+					<h:commandButton action="#{agendamentoMBean.cadastrarAgendamento}" value="Cadastrar"/>
+				</p>
+				
+				
+			</fieldset>
+		</h:form>
+	</ui:define>
+</ui:composition>
