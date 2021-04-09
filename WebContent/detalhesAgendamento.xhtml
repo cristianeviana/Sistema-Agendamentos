@@ -26,7 +26,9 @@
 					  </h:outputText>
 			</p>
 			<p>
-				Horário: <h:outputText value="#{agendamentoMBean.detalheAgendamento.horario}" />
+				Horário: <h:outputText value="#{agendamentoMBean.detalheAgendamento.horario}">
+							<f:convertDateTime pattern="HH:mm"/>
+						 </h:outputText>
 			</p>
 			<p>
 				Motivo: <h:outputText value="#{agendamentoMBean.detalheAgendamento.motivo}" />

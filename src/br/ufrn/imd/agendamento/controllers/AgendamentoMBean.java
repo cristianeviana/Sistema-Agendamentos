@@ -11,8 +11,8 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.ufrn.imd.agendamento.dominio.Agendamento;
-import br.ufrn.imd.agendamento.dominio.Funcionario;
 import br.ufrn.imd.agendamento.dominio.Setor;
+import br.ufrn.imd.agendamento.dominio.Usuario;
 import br.ufrn.imd.agendamento.repositorios.AgendamentoRepositorio;
 
 @Named
@@ -45,6 +45,8 @@ public class AgendamentoMBean implements Serializable {
 	
 	public String novoAgendamento() {
 		agendamento = new Agendamento();
+		usuarioMBean.setUsuario(new Usuario());
+		setorMBean.setSetor(new Setor());
 		return "cadastroAgendamento.jsf";
 	}	
 	
@@ -66,7 +68,7 @@ public class AgendamentoMBean implements Serializable {
 			return "detalhesAgendamento.jsf";	
 		}
 		else {
-			FacesMessage msg = new FacesMessage("Agendamento realizado com sucesso!");
+			FacesMessage msg = new FacesMessage("Agendamento não localizado!");
 			msg.setSeverity(FacesMessage.SEVERITY_ERROR);
 			FacesContext.getCurrentInstance().addMessage("", msg);
 			return null;

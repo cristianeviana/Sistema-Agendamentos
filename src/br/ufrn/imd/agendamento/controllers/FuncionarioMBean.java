@@ -33,7 +33,6 @@ public class FuncionarioMBean implements Serializable {
 			FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("funcionarioLogado", funcionarioLogado);
 			return "/pages/index.jsf";
 		}
-		//não existe
 		else {
 			FacesMessage msg = new FacesMessage("Funcionário não encontrado.");
 			msg.setSeverity(FacesMessage.SEVERITY_ERROR);

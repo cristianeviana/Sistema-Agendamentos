@@ -6,10 +6,10 @@
 
 	<ui:define name="conteudo">
 			
-		<h4> Usuário: - <h:outputText value="#{funcionarioMBean.funcionarioLogado.nome}" /> </h4>
+		<h4> Usuário:  <h:outputText value="#{funcionarioMBean.funcionarioLogado.nome}" /> </h4>
 		<h:form>
 			<p> <h:commandLink action="#{agendamentoMBean.listarAgendamentos}" value="Listar Agendamentos"  /> </p>
-			<p> <h:commandLink action="#{agendamentoMBean.novoAgendamentos}" value="Novo Agendamento"  /> </p>
+			
 		</h:form>
 	</ui:define>
 </ui:composition>
