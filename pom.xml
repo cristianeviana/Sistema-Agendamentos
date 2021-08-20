@@ -4,14 +4,14 @@
   <artifactId>SistemaAgendamento</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
-  <!--<dependencies>
+  <dependencies>
 		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>8.0</version>
 			<scope>provided</scope>
 		</dependency>
-  </dependencies> -->
+  </dependencies> 
   <properties>
     <sonar.organization>cristianeviana</sonar.organization>
     <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -21,9 +21,9 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
+        <version>3.8.0</version>
         <configuration>
-          <release>11</release>
+          <release>10</release>
         </configuration>
       </plugin>
       <plugin>
